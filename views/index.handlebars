@@ -1,1 +1,45 @@
 Setup the index.handlebars to have the template that Handlebars can render onto. Create a button in index.handlebars that will submit the user input into the database.
+<h1>Eat da burger!</h1>
+
+<h2>Burgers to eat:</h2>
+
+<form id="form">
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <input id="createBurger" type="text" placeholder="Create your burger">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <button id="submit" class="btn" type="button">Submit</button>
+        </div>
+    </div>
+
+</form>
+
+<div class="row">
+    <div class="col s6">
+        {{#each burgers}}
+            {{#unless devoured}}
+                <div class="row">
+                    <div class="col s8">
+                        <span>{{burger_id}}.   {{burger_name}}</span>
+                    </div>
+
+                    <div class="col s4 ">
+                        <button data-id="{{id}}" class="devour btn" type="button">Devour</button>
+                    </div>
+                </div>
+            {{/unless}}
+        {{/each}}
+    </div>
+
+    <div class="col s6">
+        {{#each burgers}}
+            {{#if devoured}}
+                <div>{{burger_id}}. {{burger_name}}</div>
+            {{/if}}
+        {{/each}}
+    </div>
+</div>
