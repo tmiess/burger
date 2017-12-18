@@ -14,5 +14,5 @@ model: burger.js: core logic of the app that drives the whole process. talks to 
 views: what the user will see and interact with
      : index.handlebars: contains the template that handlebars will render to. contains the submit button
      : layouts: main.handlebars: contains links, refs, outline of html template
-controller: middle-man/traffic-cop, talks to model and view
+controller: burgers_controller.js: middle-man/traffic-cop, talks to model (burger.js) and views (main and index handlebars to update UI)
 router: like a mini-app, a module of routes that we plug in

@@ -49,6 +49,7 @@ function objToSql(ob) {
 
 // orm object for all our SQL statement function
 var orm = {
+    // this will return all rows
     selectAll: function(tableInput, cb) {
         var queryString = "SELECT * FROM" + tableInput + ";";
         connection.query(queryString, function(err, result) {
@@ -59,12 +60,14 @@ var orm = {
         });
     },
 
+    // this will insert a single row
     insertOne: function(table, cols, vals, cb) {
         var queryString = "INSERT INTO" + table;
 
         queryString += " (";
         queryString += cols.toString();
         queryString += ") ";
+        queryString += "VALUES (";
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
 
@@ -79,6 +82,7 @@ var orm = {
         });
     },
 
+    // this will update a single row
     updateOne: function(table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
 
