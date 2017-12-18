@@ -8,45 +8,16 @@
     <link rel="stylesheet" href="../../public/assets/css/burger_style.css" type="text/css" />
     <title>Eat da burga!</title>
     <script src="https://code.jquery.com/jquery.js"></script>
+	<script src="../../public/assets/js/cats.js"></script>
 
     <!--Materialize CSS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    {{!--
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">--}} {{!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>--}}
 </head>
 
 <body>
     {{{ body }}}
 </body>
-
-<script>
-    /*global $*/
-    $(function() {
-        $('#submit').click(function() {
-            var createBurger = $('#createBurger').val().trim();
-            if (createBurger) {
-                $.ajax({
-                    method: 'POST',
-                    url: '/',
-                    data: { createBurger: createBurger },
-                    traditional: true
-                }).done(function() {
-                    location.reload();
-                });
-            }
-        });
-        $('.devour').click(function() {
-            var eatThisBurger = $(this).data('id');
-            console.log(eatThisBurger);
-            $.ajax({
-                method: 'PUT',
-                url: '/',
-                data: { updateBurger: eatThisBurger },
-                traditional: true
-            }).done(function() {
-                location.reload();
-            });
-        });
-    });
-</script>
 
 </html>

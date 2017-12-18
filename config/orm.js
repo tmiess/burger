@@ -1,5 +1,5 @@
 // import connection.js
-var connection = require("connection.js");
+var connection = require("./connection.js");
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////following is from orm.js in exercise 17 of folder 14////////////////
