@@ -2,7 +2,7 @@
   "name": "burger",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +22,5 @@
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.10",
     "mysql": "^2.15.0",
-    "supports-color": "^5.1.0"
   }
 }
