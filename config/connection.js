@@ -10,13 +10,12 @@ if (process.env.JAWSDB_URL) {
 else {
     // localhost
     connection = mysql.createConnection({
-        port: 8080,
         host: 'localhost',
         user: 'root',
         password: '',
         database: 'burgers_db'
-    })
-};
+    });
+}
 
 // make connection
 connection.connect(function(err) {
@@ -24,7 +23,7 @@ connection.connect(function(err) {
         console.error("error connecting: " + err.stack);
         return;
     }
-    console.log("connected as id " + connection.threadID)
+    console.log("connected as id " + connection.threadID);
 });
 
 // ecport connection for our ORM to use

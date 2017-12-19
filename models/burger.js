@@ -5,19 +5,22 @@ var burger = {
 
     selectAll: function(cb) {
         //calls the orm function "selectAll" which has a cb function inside
-        orm.selectAll("burgers", function(res) {
+        orm.selectAll("burgers", function(err, res) {
+            if (err) { return res.status(500).end(); }
             cb(res);
         });
     },
     insertOne: function(cols, vals, cb) {
         //calls the orm function "insertOne" which has a cb function inside
-        orm.insertOne("burgers", cols, vals, function(res) {
+        orm.insertOne("burgers", cols, vals, function(err, res) {
+            if (err) { return res.status(500).end(); }
             cb(res);
         });
     },
     updateOne: function(objColVals, condition, cb) {
         //calls the orm function "updateOne" which has a cb function inside
-        orm.updateOne("burgers", objColVals, condition, function(res) {
+        orm.updateOne("burgers", objColVals, condition, function(err, res) {
+            if (err) { return res.status(500).end(); }
             cb(res);
         });
     }
